@@ -1,0 +1,189 @@
+<mvc:View controllerName="zhrvistorentry.controller.Main"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+     xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page">
+    
+     <f:SimpleForm  title="{i18n>hostinfo}"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="12"
+            labelSpanL="12"
+            labelSpanM="12"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="4"
+            columnsL="4"
+            columnsM="4"
+            singleContainerFullSize="false"
+            class="formNoTitle"
+        >
+            <f:content>
+              
+			    <core:Title text="test" />
+                <Label text="{i18n>PersonnelNo}" />
+                <Input 
+                value="{path:'EditModel>/results/0/HostNo', formatter:'.updateSerialNo'}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}"               
+                      showValueHelp="true"
+                    valueHelpRequest="onOpenHostName"
+                    valueHelpOnly="true"
+             />
+
+				 <Label text="{i18n>HostDepartment}" />
+                <Input 
+                value="{EditModel>/results/0/HostDept}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+
+              
+				<core:Title text="test" />
+		       <Label text="{i18n>HostName}" />
+                <Text text="{path:'EditModel>/results/0/HostName', formatter:'.updateSerialNo'}" ></Text>
+
+                 <Label text="{i18n>HostSection}" />
+                <Input 
+                value="{EditModel>/results/0/HostSection}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+
+                <core:Title text="test" />
+                   
+	          <Label text="{i18n>HostStatus}" />
+                <Input 
+                value="{EditModel>/results/0/Status}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+
+                 <Label text="{i18n>HostJob}" />
+                <Input 
+                value="{EditModel>/results/0/HostJob}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+
+            
+            <core:Title text="test" />
+            <Label text="{i18n>HostDate}" />
+                <DatePicker  value="{
+						'path': 'EditModel>/results/0/HostDate',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							'pattern': 'dd-MM-yyyy',
+                            'UTC': true
+						}				
+					}"   enabled="{Header>/data/editable}" editable="{Header>/data/editable}"/>
+
+            
+                  <Label text="{i18n>HostBand}" />
+                <Input 
+                value="{EditModel>/results/0/HostBand}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+            </f:content>			
+        </f:SimpleForm>
+
+        <f:SimpleForm title="{i18n>visitorInfo}"
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="12"
+            labelSpanL="12"
+            labelSpanM="12"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="4"
+            columnsL="4"
+            columnsM="4"
+            singleContainerFullSize="false"
+            class="formNoTitle"
+        >
+            <f:content>
+                <core:Title text="test" />
+                <Label text="{i18n>VisitorName}" />
+                <Input 
+                value="{EditModel>/results/0/VisitorName}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+
+                <core:Title text="test" />
+				 <Label text="{i18n>DateofVisit}" />
+                <DatePicker  value="{
+						'path': 'EditModel>/results/0/DateOfVisit',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							'pattern': 'dd-MM-yyyy',
+                            'UTC': true
+						}				
+					}"   enabled="{Header>/data/editable}" editable="{Header>/data/editable}"/>
+
+			    <core:Title text="test" />
+				<Label text="{i18n>ExpectedtimeofVis}" />
+			  <TimePicker id="idtime" value="{
+				path: 'EditModel>/results/0/ExpectedTimeOfVisit',
+				type: 'sap.ui.model.odata.type.Time',
+                formatOptions: {  
+                    pattern : 'HH:mm:ss'
+                }}"
+                 enabled="{Header>/data/editable}" editable="{Header>/data/editable}" />
+                
+				<core:Title text="test" />
+		       <Label text="{i18n>VisitorStatus}" />
+                 <ComboBox enabled="{Header>/data/editable}" editable="{Header>/data/editable}"
+                                    selectedKey="{EditModel>/results/0/VisitorStatus}"
+                                >
+                                <core:ListItem key="Normal" text="Normal"/>
+                                </ComboBox>
+            </f:content>			
+        </f:SimpleForm>
+        <f:SimpleForm 
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="12"
+            labelSpanL="12"
+            labelSpanM="12"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false"
+            class="formNoTitle"
+        >
+            <f:content>
+                <core:Title text="test" />
+		      <Label text="{i18n>PurposeofTheVisit}" />
+              <TextArea value="{EditModel>/results/0/PurposeOfVisit}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
+
+              <Label text="{i18n>SpecialArrangement}" />
+              <TextArea value="{EditModel>/results/0/Arrangement}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
+            </f:content>			
+        </f:SimpleForm>
+
+        <footer>
+			<OverflowToolbar>
+             <Input width="20%" placeholder="Seq. No"
+                value="{path:'EditModel>/results/0/Seq', formatter:'.updateSerialNo'}"
+                    showValueHelp="true"
+                    valueHelpRequest="onOpenSeq"
+                    valueHelpOnly="true"
+                />
+				<ToolbarSpacer/>
+				<Button type="Emphasized" text="Save" press="onsave"  enabled="{Header>/data/editable}" />
+				<Button type="Emphasized" text="Delete" press="ondelete"  enabled="{=! ${Header>/data/editable}}" />
+			</OverflowToolbar>
+		</footer>
+    </Page>
+</mvc:View>

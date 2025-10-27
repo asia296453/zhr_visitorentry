@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	 <SelectDialog  title="{i18n>Sequencenumber}"
+                 search="_handleValueHelpSearchSeq"
+		confirm="_handleValueHelpConfSeq"
+                  cancel="onCloseSeq"
+                  growing="false"
+				  items="{path:'/HeaderSet', length:1000,templateShareable: false }" 
+				  multiSelect="false" 
+				  rememberSelections="true">
+        <StandardListItem title="{path:'Seq', formatter:'.updateSerialNo'}" 
+		 	type="Active"/>
+    </SelectDialog>
+
+</core:FragmentDefinition>

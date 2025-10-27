@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	 <SelectDialog  title="{i18n>HostName}"
+                 search="_handleValueHelpSearchHostName"
+		confirm="_handleValueHelpConfHostName"
+                  cancel="onCloseHostName"
+                  growing="false"
+				  items="{path:'/HostDetailsSet', length:1000,templateShareable: false }" 
+				  multiSelect="false" 
+				  rememberSelections="true">
+        <StandardListItem title="{path:'HostNo', formatter:'.updateSerialNo'}" info="{HostName}"
+		 	type="Active"/>
+    </SelectDialog>
+
+</core:FragmentDefinition>
