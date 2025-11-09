@@ -107,13 +107,7 @@
             class="formNoTitle"
         >
             <f:content>
-                <core:Title text="test" />
-                <Label text="{i18n>VisitorName}" />
-                <Input 
-                value="{EditModel>/results/0/VisitorName}"
-                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
-
+               
                 <core:Title text="test" />
 				 <Label text="{i18n>DateofVisit}" />
                 <DatePicker  value="{
@@ -142,6 +136,8 @@
                                 >
                                 <core:ListItem key="Normal" text="Normal"/>
                                 </ComboBox>
+
+                 <core:Title text="test" />
             </f:content>			
         </f:SimpleForm>
         <f:SimpleForm 
@@ -163,6 +159,12 @@
             class="formNoTitle"
         >
             <f:content>
+             <core:Title text="test" />
+                <Label text="{i18n>VisitorName}" />
+                <TextArea maxLength="500" 
+                value="{EditModel>/results/0/VisitorName}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
                 <core:Title text="test" />
 		      <Label text="{i18n>PurposeofTheVisit}" />
               <TextArea value="{EditModel>/results/0/PurposeOfVisit}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
@@ -182,7 +184,7 @@
                 />
 				<ToolbarSpacer/>
 				<Button type="Emphasized" text="Save" press="onsave"  enabled="{Header>/data/editable}" />
-				<Button type="Emphasized" text="Delete" press="ondelete"  enabled="{=! ${Header>/data/editable}}" />
+				<!-- <Button type="Emphasized" text="Delete" press="ondelete"  enabled="{=! ${Header>/data/editable}}" /> -->
 			</OverflowToolbar>
 		</footer>
     </Page>
