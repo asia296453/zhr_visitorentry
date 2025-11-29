@@ -37,35 +37,40 @@
              />
 
 				 <Label text="{i18n>HostDepartment}" />
-                <Input 
+                 <Text text="{EditModel>/results/0/HostDept}" />
+                <!-- <Input 
                 value="{EditModel>/results/0/HostDept}"
                     enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
+                 /> -->
 
               
 				<core:Title text="test" />
 		       <Label text="{i18n>HostName}" />
-                <Text text="{path:'EditModel>/results/0/HostName', formatter:'.updateSerialNo'}" ></Text>
+               <Text text="{EditModel>/results/0/HostName}" />
+                <!-- <Text text="{path:'EditModel>/results/0/HostName', formatter:'.updateSerialNo'}" ></Text> -->
 
                  <Label text="{i18n>HostSection}" />
-                <Input 
+                 <Text text="{EditModel>/results/0/HostSection}" />
+                <!-- <Input 
                 value="{EditModel>/results/0/HostSection}"
                     enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
+                 /> -->
 
                 <core:Title text="test" />
                    
-	          <Label text="{i18n>HostStatus}" />
-                <Input 
-                value="{EditModel>/results/0/Status}"
-                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
+	          <Label text="{i18n>HostStatus}" />  
+              <Text text="{EditModel>/results/0/Status}" />            
+                <!-- <ComboBox enabled="{Header>/data/editable}" editable="{Header>/data/editable}"
+                                    selectedKey="{EditModel>/results/0/Status}" >
+                        <core:ListItem key="Saved" text="Saved"/>
+                </ComboBox> -->
 
                  <Label text="{i18n>HostJob}" />
-                <Input 
+                  <Text text="{EditModel>/results/0/HostJob}" />     
+                <!-- <Input 
                 value="{EditModel>/results/0/HostJob}"
                     enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
+                 /> -->
 
             
             <core:Title text="test" />
@@ -81,10 +86,11 @@
 
             
                   <Label text="{i18n>HostBand}" />
-                <Input 
+                   <Text text="{EditModel>/results/0/HostBand}" /> 
+                <!-- <Input 
                 value="{EditModel>/results/0/HostBand}"
                     enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
+                 /> -->
             </f:content>			
         </f:SimpleForm>
 
@@ -121,25 +127,73 @@
 
 			    <core:Title text="test" />
 				<Label text="{i18n>ExpectedtimeofVis}" />
-			  <TimePicker id="idtime" value="{
+			  <TimePicker  value="{
 				path: 'EditModel>/results/0/ExpectedTimeOfVisit',
 				type: 'sap.ui.model.odata.type.Time',
                 formatOptions: {  
                     pattern : 'HH:mm:ss'
                 }}"
                  enabled="{Header>/data/editable}" editable="{Header>/data/editable}" />
-                
-				<core:Title text="test" />
+            
+              <core:Title text="test" />
+				 <Label text="{i18n>DateofVisit1}" />
+                <DatePicker  value="{
+						'path': 'EditModel>/results/0/VisitTo',
+						'type':'sap.ui.model.type.Date',
+						'formatOptions': {
+							'pattern': 'dd-MM-yyyy',
+                            'UTC': true
+						}				
+					}"   enabled="{Header>/data/editable}" editable="{Header>/data/editable}"/>
+
+			    <core:Title text="test" />
+				<Label text="{i18n>ExpectedtimeofVis1}" />
+			  <TimePicker  value="{
+				path: 'EditModel>/results/0/VisitToTime',
+				type: 'sap.ui.model.odata.type.Time',
+                formatOptions: {  
+                    pattern : 'HH:mm:ss'
+                }}"
+                 enabled="{Header>/data/editable}" editable="{Header>/data/editable}" />
+            </f:content>			
+        </f:SimpleForm>
+
+         <f:SimpleForm 
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="12"
+            labelSpanL="12"
+            labelSpanM="12"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="0"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="2"
+            columnsM="2"
+            singleContainerFullSize="false"
+            class="formNoTitle"
+        >
+            <f:content>
+             <core:Title text="test" />
+                <Label text="{i18n>VisitorName}" />
+                <TextArea maxLength="500"  
+                value="{EditModel>/results/0/VisitorName}"
+                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
+                 />
+            <core:Title text="test" />
 		       <Label text="{i18n>VisitorStatus}" />
                  <ComboBox enabled="{Header>/data/editable}" editable="{Header>/data/editable}"
-                                    selectedKey="{EditModel>/results/0/VisitorStatus}"
+                                    selectedKey="{EditModel>/results/0/VisitorStatus}" width="45%"
                                 >
                                 <core:ListItem key="Normal" text="Normal"/>
                                 </ComboBox>
-
-                 <core:Title text="test" />
-            </f:content>			
+        </f:content>			
         </f:SimpleForm>
+
+
         <f:SimpleForm 
             editable="true"
             layout="ResponsiveGridLayout"
@@ -159,18 +213,14 @@
             class="formNoTitle"
         >
             <f:content>
-             <core:Title text="test" />
-                <Label text="{i18n>VisitorName}" />
-                <TextArea maxLength="500" 
-                value="{EditModel>/results/0/VisitorName}"
-                    enabled="{Header>/data/editable}" editable="{Header>/data/editable}" 
-                 />
                 <core:Title text="test" />
 		      <Label text="{i18n>PurposeofTheVisit}" />
-              <TextArea value="{EditModel>/results/0/PurposeOfVisit}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
+              <TextArea 
+              value="{EditModel>/results/0/PurposeOfVisit}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
 
               <Label text="{i18n>SpecialArrangement}" />
-              <TextArea value="{EditModel>/results/0/Arrangement}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
+              <TextArea 
+              value="{EditModel>/results/0/Arrangement}"  enabled="{Header>/data/editable}" editable="{Header>/data/editable}"></TextArea>
             </f:content>			
         </f:SimpleForm>
 

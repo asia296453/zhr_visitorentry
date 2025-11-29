@@ -179,6 +179,16 @@ sap.ui.define([
              else if(oPayload.Arrangement  === ""){
                 MessageBox.error("Special Arrangement Required is mandatory");
                 bflag = false;
+            }else{
+                var fromdate = new Date(oPayload.DateOfVisit);
+                if(oPayload.VisitTo !== null && oPayload.VisitTo !== undefined && oPayload.VisitTo !== ''){
+                    var todate = new Date(oPayload.VisitTo);
+                    if(fromdate > todate){
+                         MessageBox.error("Visit From cannot be greater than Visit To");
+                         bflag = false;
+                    }
+                }
+                
             }
              return bflag ;
         },
